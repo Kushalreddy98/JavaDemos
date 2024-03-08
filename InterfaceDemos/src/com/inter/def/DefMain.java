@@ -1,0 +1,15 @@
+package com.inter.def;
+
+public class DefMain {
+    public static void main(String[] args) {
+        IBonusCalculator bonusCalculator= new CalculatorImpl();
+        bonusCalculator.calculate(2000);
+        IBonusCalculator.show();
+
+        IAllowanceCalculator allowance=(IAllowanceCalculator) bonusCalculator;
+        allowance.calculate(3000);
+        allowance.policyType();
+
+
+    }
+}
