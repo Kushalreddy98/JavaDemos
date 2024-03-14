@@ -7,7 +7,7 @@ import com.bookapp.model.Book;
 import java.util.List;
 
 public interface IBookRepository {
-    void addBook(Book book);
+    void addByBook(Book book);
     void updateBook(int bookId,double price);
     void deleteBook(int bookId);
     Book findById(int bookId) throws IdNotFoundException;

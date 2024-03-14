@@ -6,6 +6,7 @@ import org.doctorApp.model.Doctor;
 import org.doctorApp.repository.DoctorRepositoryImpl;
 import org.doctorApp.repository.IDoctorRepository;
 
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class DoctorServiceImpl implements IDoctorService {
     }
 
     @Override
-    public Doctor getById(int doctorId) throws IdNotFoundException {
+    public Doctor getById(int doctorId) throws IdNotFoundException, SQLException {
         Doctor doctor= repository.findById(doctorId);
         if(doctor==null)
             throw new IdNotFoundException("Invalid id");
